@@ -3,7 +3,16 @@
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 40.7628, lng: -74.0059},
-          zoom: 12
+          zoom: 12,
+          panControlOptions: {
+          position: google.maps.ControlPosition.BOTTOM_LEFT
+          },
+          zoomControl: true,
+          zoomControlOptions: {
+          style: google.maps.ZoomControlStyle.LARGE,
+          position: google.maps.ControlPosition.RIGHT_CENTER
+      },
+          scaleControl: true
         });
       }
 
