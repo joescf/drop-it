@@ -21,4 +21,20 @@ function getAllDrops(req,res,next) {
     });
 }
 
-module.exports = { getAllDrops };
+function addDrop(req,res,next) {
+  console.log(req)
+  db.none(`INSERT INTO drops
+           (drop)
+           VALUES
+           ($1);`,
+          [req.body.drop])
+    .then( data => {
+      console.log('Successfully added new entry');
+      next();
+    })
+    .catch( error => {
+      console.log('Error ', error);
+    });
+}
+
+module.exports = { getAllDrops, addDrop };
