@@ -4,8 +4,8 @@ CREATE TABLE drops (
   drop_id SERIAL PRIMARY KEY NOT NULL,
   user_name VARCHAR,
   drop VARCHAR(60),
-  latitude DECIMAL,
-  longitude DECIMAL,
+  latitude DOUBLE PRECISION,
+  longitude DOUBLE PRECISION,
   created_at TIMESTAMP DEFAULT now()
 
 );

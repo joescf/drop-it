@@ -1,4 +1,5 @@
     // from google maps api
+    // create the map and place it on the page
     var map;
       function initMap() {
         navigator.geolocation.getCurrentPosition(function(location) {
@@ -24,7 +25,6 @@
 $('document').ready(function() {
 
 console.log('conneected');
-
 $('#button').click(function() {
   console.log('clicked');
   navigator.geolocation.getCurrentPosition(function(location) {
@@ -39,7 +39,11 @@ $('#button').click(function() {
         map: map,
         title: 'You are here'
       });
-    // console.log('accuracy ' + location.coords.accuracy);
+
+    let latInput = $('<input class="coords" name="latitude">').val(latitudeFlag);
+    let longInput = $('<input class="coords" name="longitude">').val(longitudeFlag);
+    $('form').append(latInput, longInput);
+
   });
 
 });

@@ -6,7 +6,7 @@ router.get('/', function(req,res) {
   res.render('index');
 });
 router.post('/drops', addDrop, function(req, res) {
-  res.redirect('/');
+  res.redirect('/drops');
 });
 
 module.exports = router;

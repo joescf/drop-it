@@ -24,10 +24,10 @@ function getAllDrops(req,res,next) {
 function addDrop(req,res,next) {
   console.log(req)
   db.none(`INSERT INTO drops
-           (drop)
+           (drop, latitude, longitude)
            VALUES
-           ($1);`,
-          [req.body.drop])
+           ($1, $2, $3);`,
+          [req.body.drop, req.body.latitude, req.body.longitude])
     .then( data => {
       console.log('Successfully added new entry');
       next();
