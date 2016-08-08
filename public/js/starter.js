@@ -1,8 +1,11 @@
     // from google maps api
     var map;
       function initMap() {
+        navigator.geolocation.getCurrentPosition(function(location) {
+        let latitude = location.coords.latitude;
+        let longitude = location.coords.longitude;
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 40.7628, lng: -74.0059},
+          center: {lat: latitude, lng: longitude},
           zoom: 12,
           panControlOptions: {
           position: google.maps.ControlPosition.BOTTOM_LEFT
@@ -14,7 +17,8 @@
       },
           scaleControl: true
         });
-      }
+      });
+    };
 
 
 $('document').ready(function() {
@@ -24,16 +28,16 @@ console.log('conneected');
 $('#button').click(function() {
   console.log('clicked');
   navigator.geolocation.getCurrentPosition(function(location) {
-  let latitude = location.coords.latitude;
-  let longitude = location.coords.longitude;
+  let latitudeFlag = location.coords.latitude;
+  let longitudeFlag = location.coords.longitude;
     console.log(location);
 
-    console.log('latitude: ' + latitude);
-    console.log('longitude: ' + longitude);
+    console.log('latitude: ' + latitudeFlag);
+    console.log('longitude: ' + longitudeFlag);
     var marker = new google.maps.Marker({
-        position: {lat: latitude, lng: longitude},
+        position: {lat: latitudeFlag, lng: longitudeFlag},
         map: map,
-        title: 'Hello World!'
+        title: 'You are here'
       });
     // console.log('accuracy ' + location.coords.accuracy);
   });
