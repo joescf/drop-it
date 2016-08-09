@@ -2,11 +2,14 @@
         height: 100%;
         margin: 0;
         padding: 0;
+        color: #4EB1BA;
       }
 
-
+header {
+  background-color: #222930;
+}
 h1 {
-  color: red;
+  color: #E9E9E9;
 }
 #map {
   margin: 0 auto;
