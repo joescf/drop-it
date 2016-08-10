@@ -37,4 +37,27 @@ function addDrop(req,res,next) {
     });
 }
 
+// function deleteDrop(req,res,next) {
+//   console.log(req)
+//   db.one (`DELETE *
+//            FROM drops`)
+//     .then( data => {
+//       res.rows = data;
+//       next();
+//     })
+//   .catch( error => {
+//       console.log('Error ', error);
+//     });
+// }
+
+
+
+
+
+
+
+
+
+
+
 module.exports = { getAllDrops, addDrop };
