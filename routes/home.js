@@ -5,10 +5,9 @@ const KEY            = process.env.GOOLGE_API;
 router.get('/', function(req,res) {
   res.render('index', {KEY: KEY});
 });
-router.post('/drops', addDrop, function(req, res) {
-  res.redirect('/');
-});
-// router.delete('/drops', deleteDrop, function(req, res) {
+
+
+// router.delete('/drops/:id', deleteDrop, function(req, res) {
 //   res.redirect('/');
 // })
 

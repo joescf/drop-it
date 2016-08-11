@@ -2,7 +2,7 @@ const express        = require('express');
 const logger         = require('morgan');
 const path           = require('path');
 const bodyParser     = require('body-parser');
-
+const methodOverride = require('method-override');
 
 const homeRoute      = require('./routes/home');
 const dropsRoute     = require('./routes/drops');
@@ -17,6 +17,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger('dev'));
+app.use(methodOverride('_method'));
 
 app.use('/drops', dropsRoute)
 app.use('/', homeRoute);

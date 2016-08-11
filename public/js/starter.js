@@ -44,8 +44,8 @@ console.log('conneected');
     const infoWindowContent =
         '<div class="info_content">' +
         '<h3> Drop: '+ theDrop + '</h3>' +
-        '<form action="delete">' +
-          '<input type="submit" name="delete" value="Delete drop" />'
+        `<form method="post" action="/drops/${drop_id}?_method=DELETE">'
+          '<input type="submit" name="delete" value="Delete drop" />`
         '</form>' +
         '</div>';
       console.log(theDrop)
@@ -81,7 +81,8 @@ console.log('conneected');
           theLats = data[i].latitude;
           theLngs = data[i].longitude;
           theDrop = data[i].drop;
-          allMarkers = new google.maps.LatLng(theLats, theLngs, theDrop);
+          drop_id = data[i].drop_id;
+          allMarkers = new google.maps.LatLng(theLats, theLngs, theDrop, drop_id);
           addMarker(allMarkers);
         }
 

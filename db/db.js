@@ -9,6 +9,9 @@ const pgConfig = {  host: process.env.PG_HOST,
 
 const db       = pg(pgConfig);
 
+
+
+
 function getAllDrops(req,res,next) {
   console.log('hi there');
   db.any(`SELECT * FROM drops`)
@@ -37,19 +40,31 @@ function addDrop(req,res,next) {
     });
 }
 
-// function deleteDrop(req,res,next) {
-//   console.log(req)
-//   db.one (`DELETE *
-//            FROM drops`)
-//     .then( data => {
+// function getDrop(req,res,next) {
+//    db.one(`SELECT *
+//           FROM drops
+//           WHERE drop_id=$1`,[req.params.id])
+//     .then(data => {
 //       res.rows = data;
 //       next();
 //     })
-//   .catch( error => {
+//     .catch( error => {
 //       console.log('Error ', error);
-//     });
+//     })
 // }
 
+function deleteDrop(req,res,next) {
+  console.log(req)
+  db.any (`DELETE
+           FROM drops
+           WHERE drop_id=$1;`,[req.params.id])
+    .then( data => {
+           next();
+    })
+  .catch( error => {
+      console.log('Error ', error);
+    });
+}
 
 
 
@@ -60,4 +75,6 @@ function addDrop(req,res,next) {
 
 
 
-module.exports = { getAllDrops, addDrop };
+
+
+module.exports = { getAllDrops, addDrop, deleteDrop };
