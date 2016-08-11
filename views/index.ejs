@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <script type='text/javascript' src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
   <script type='text/javascript' src='js/starter.js'></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=<%=KEY%>&callback=initMap"
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%=KEY%>&callback=initMap&libraries=geometry"
         async defer></script>
 
 
@@ -18,17 +18,17 @@
   </header>
   <h3><i>Drop-it</i></h3>
   <div id="map"></div>
-  <button id="button">click to show and console log location</button>
   <br>
   <form action="/drops" method="post">
 
   <textarea name="drop" id="drop" cols="20" rows="10">
 
   </textarea>
+  <p>You have  <span id="remaining">47</span> characters remaining</p>
 
 
     <br>
-  <input type="submit" value="Add drop to database">
+  <input id="dropToMap" type="submit" value="Add drop to map">
 
   </form>
 
@@ -36,30 +36,6 @@
 
 </body>
 </html>
-
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <title>Simple Map</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 100%;
-      }
-    </style>
-  </head>
-  <body>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNnM2fPT44bJn18wSQrQE1RxAC_j-R2NI&callback=initMap"
-    async defer></script>
-  </body>
-</html> -->
-
 
 
 
