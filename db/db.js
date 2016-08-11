@@ -67,14 +67,4 @@ function deleteDrop(req,res,next) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
 module.exports = { getAllDrops, addDrop, deleteDrop };

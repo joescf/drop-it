@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { getAllDrops, addDrop, deleteDrop }  = require('../db/db');
 const sendJSONresp = (req,res)=>res.json(res.rows);
-console.log(deleteDrop);
 
 
 
