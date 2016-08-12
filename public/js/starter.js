@@ -98,14 +98,16 @@ console.log('conneected');
                longitude: ''},
       })
       .done(function(data) {
-       let triangleCoords = [
-    {lat: 25.774, lng: -80.190},
-    {lat: 18.466, lng: -66.118},
-    {lat: 32.321, lng: -64.757},
-    {lat: 25.774, lng: -80.190}
+       let dropZone = [
+    {lat: latitudeFlag + .001, lng: longitudeFlag + .001},
+    {lat: latitudeFlag + .001, lng: longitudeFlag - .001},
+    {lat: latitudeFlag - .001, lng: longitudeFlag - .001},
+    {lat: latitudeFlag - .001, lng: longitudeFlag + .001},
+
+
   ];
 let bermudaTriangle = new google.maps.Polygon({
-    paths: triangleCoords,
+    paths: dropZone,
     strokeColor: '#FF0000',
     strokeOpacity: 0.8,
     strokeWeight: 2,
