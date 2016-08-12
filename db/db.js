@@ -40,18 +40,6 @@ function addDrop(req,res,next) {
     });
 }
 
-// function getDrop(req,res,next) {
-//    db.one(`SELECT *
-//           FROM drops
-//           WHERE drop_id=$1`,[req.params.id])
-//     .then(data => {
-//       res.rows = data;
-//       next();
-//     })
-//     .catch( error => {
-//       console.log('Error ', error);
-//     })
-// }
 
 function deleteDrop(req,res,next) {
   console.log(req)

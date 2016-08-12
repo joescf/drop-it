@@ -16,19 +16,18 @@
   <header>
     <h1>Drop-it</h1>
   </header>
-  <h3><i>Drop-it</i></h3>
   <div id="map"></div>
   <br>
   <form action="/drops" method="post">
 
-  <textarea name="drop" id="drop" cols="20" rows="10">
-
-  </textarea>
-  <p>You have  <span id="remaining">47</span> characters remaining</p>
-
-
+  <div class="border">
+    <textarea name="drop" id="drop" class="dropText" cols="20" rows="10" maxlength="54">
+    </textarea>
+    <p class="droptext">You have  <span id="remaining" class="droptext">50</span> characters remaining</p>
     <br>
-  <input id="dropToMap" type="submit" value="Add drop to map">
+    <input id="dropButton" class="droptext" type="submit" value="Add drop to map">
+  </div>
+
 
   </form>
 

@@ -16,11 +16,23 @@ h1 {
   height: 65%;
   width: 80%;
 }
-#dropToMap {
-    position: relative;
-    top: -70px;
-}
+
 .coords {
   visibility: hidden;
 }
-
+.dropText {
+  display: block;
+  width: 33%;
+  margin: 0 auto;
+}
+p {
+  text-align: center;
+}
+.border {
+  height: 25%;
+  width: 100%;
+}
+#dropButton {
+  display: block;
+  margin: 0 auto;
+}
