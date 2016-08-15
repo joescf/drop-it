@@ -27,13 +27,13 @@ $('document').ready(function() {
   console.log('Geolocation is supported!');
   }
   else {
-    console.log('Geolocation is not supported for this Browser/OS version yet.');
+    console.log('Geolocation is not supported for this Browser');
   }
 
   console.log('conneected');
 
   navigator.geolocation.getCurrentPosition(function(location) {
-    console.log('navigator.geolocation.watchPosition Fired');
+
     let latitudeFlag = location.coords.latitude;
     let longitudeFlag = location.coords.longitude;
       // console.log(location);
