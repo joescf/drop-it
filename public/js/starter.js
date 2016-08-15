@@ -48,12 +48,12 @@ $('document').ready(function() {
     function addMarker(location) {
 
       let infoWindowContent =
-          '<div class="info_content">' +
-          '<h3> Drop: ' + theDrop + '</h3>' +
-          '<form method="post" action="/drops/${drop_id}?_method=DELETE">' +
-            '<input type="submit"' + disabled + ' name="delete" value="Delete drop" />' +
-          '</form>' +
-          '</div>';
+         `<div class="info_content">
+            <h3> Drop: ` + theDrop + `</h3>
+            <form method="post" action="/drops/${drop_id}?_method=DELETE">
+              <input type="submit" ` + disabled + ` name="delete" value="Delete drop" />
+            </form>
+          </div>`;
 
       infoWindow = new google.maps.InfoWindow({
           content: ''
@@ -114,13 +114,13 @@ $('document').ready(function() {
           theDrop = data[i].drop;
           drop_id = data[i].drop_id;
           let test = new google.maps.LatLng(theLat, theLng);
-          let result = google.maps.geometry.poly.containsLocation ( test, dZone );
-          console.log(result);
-          if (result !== true) {
+          let inDropZone = google.maps.geometry.poly.containsLocation ( test, dZone );
+          console.log(inDropZone);
+          if (inDropZone !== true) {
             theDrop = 'drop-by to view this drop';
-            disabled = "disabled";
-          }else if (result) {
-            disabled = "";
+            disabled = 'disabled';
+          }else if (inDropZone) {
+            disabled = '';
           }
           allMarkers = new google.maps.LatLng(theLat, theLng, theDrop, drop_id);
 
