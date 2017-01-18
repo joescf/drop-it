@@ -51,7 +51,7 @@ $('document').ready(function() {
          `<div class="info_content">
             <h3> Drop: ` + theDrop + `</h3>
             <form method="post" action="/drops/${drop_id}?_method=DELETE">
-              <input type="submit" ` + disabled + ` name="delete" value="Delete drop" />
+              <input type="submit" ` + disabled + ` name="delete" value="Drop drop" />
             </form>
           </div>`;
 
